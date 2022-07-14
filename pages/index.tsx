@@ -1,6 +1,8 @@
 import Header from "../components/Header";
 import Topscroller from "../components/Topscroller";
 import Head from "next/head";
+import Banner from "../components/Banner";
+import TabHeader from "../components/TabHeader";
 
 export default function Home() {
   return (
@@ -14,11 +16,17 @@ export default function Home() {
       </Head>
       <Topscroller />
       <Header />
-      <div className="px-20">
-        <h1 className="text-white text-4xl font-semibold">
+      <div className="px-28">
+        <p className="text-white text-5xl font-semibold pt-60">
           Guide your portfolio to the stars
-        </h1>
+        </p>
+        <p className="text-deep-blue text-2xl font-semibold pt-5 pr-80">
+          All the tools you need to make wise investment decisions. Join 1
+          million+ smart investors
+        </p>
+        <Banner />
       </div>
+      <TabHeader />
     </div>
   );
 }

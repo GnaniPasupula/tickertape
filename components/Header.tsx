@@ -22,7 +22,7 @@ function Header() {
         />
         <h3
           onClick={() => setShowPopup_logo(true)}
-          className="text-white cursor-pointer font-bold text-lg"
+          className="text-white cursor-pointer font-semibold text-lg"
         >
           tickertape
         </h3>
