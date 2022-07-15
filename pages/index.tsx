@@ -38,9 +38,9 @@ export default function Home() {
         </p>
       </div>
       <TabHeader />
-      <section className="pl-28 mt-24 flex justify-between " id="screener">
+      <section className="pl-28 mt-24 flex justify-between pr-36" id="screener">
         <div>
-          <p className="text-white text-4xl font-semibold pt-5 mr-80">
+          <p className="text-white text-4xl font-semibold pt-5">
             Futuristic Stock Screener
           </p>
           <p className="text-deep-blue text-lg pt-5 pr-1/2">
@@ -92,25 +92,31 @@ export default function Home() {
           </button>
         </div>
       </section>
-      <section className="ml-half mt-24 mr-28" id="stocks">
-        <p className="text-white text-4xl font-semibold pt-5">
-          Crisp Stock Analysis
-        </p>
-        <p className="text-deep-blue text-lg pt-5">
-          Stay updated - get collated news, dividends, corporate actions and
-          announcements in one place
-        </p>
-        <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2w h-14 flex items-center">
-          <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
-          <p>Performance forecast</p>
-        </div>
-        <div className="cursor-pointer text-white text-2xl font-semibold mt-5 hover:bg-neutral-600 rounded-full w-1/2w h-14 flex items-center">
-          <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
-          <p>Holding analysis</p>
-        </div>
-        <div className="cursor-pointer text-white text-2xl font-semibold mt-5 hover:bg-neutral-600 rounded-full w-1/2w h-14 flex items-center">
-          <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
-          <p>News & events</p>
+      <section className="ml-36 mt-24 flex justify-between" id="stocks">
+        <Card />
+        <div className="pl-48">
+          <p className="text-white text-4xl font-semibold pt-5">
+            Crisp Stock Analysis
+          </p>
+          <p className="text-deep-blue text-lg pt-5 mr-4">
+            Stay updated - get collated news, dividends, corporate actions and
+            announcements in one place
+          </p>
+          <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
+            <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+            <p>Performance forecast</p>
+          </div>
+          <div className="cursor-pointer text-white text-2xl font-semibold mt-5 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
+            <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+            <p>Holding analysis</p>
+          </div>
+          <div className="cursor-pointer text-white text-2xl font-semibold mt-5 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
+            <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+            <p>News & events</p>
+          </div>
+          <button className="mt-8 rounded bg-yellow-400 w-1/2 h-12 text-white text-2xl font-semibold">
+            Search Stocks
+          </button>
         </div>
       </section>
     </div>
