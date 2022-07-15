@@ -11,7 +11,7 @@ import {
 function Header() {
   const [showPopup_logo, setShowPopup_logo] = React.useState(false);
   return (
-    <header className="bg-primary-blue h-14 px-7 flex justify-between shadow-md">
+    <header className="sticky top-0 bg-primary-blue h-14 px-7 flex justify-between shadow-md">
       <div className="flex items-center">
         <img
           src="https://www.freelogovectors.net/svg12/tickertape_logo-freelogovectors.net.svg"
@@ -22,7 +22,7 @@ function Header() {
         />
         <h3
           onClick={() => setShowPopup_logo(true)}
-          className="text-white cursor-pointer font-semibold text-lg"
+          className="hover:bg-neutral-600 text-white cursor-pointer font-semibold text-lg"
         >
           tickertape
         </h3>
@@ -40,7 +40,7 @@ function Header() {
         ) : null}
       </div>
       <div className="flex items-center">
-        <label className="hidden md:inline-flex h-9 relative flex items-center">
+        <label className="hidden md:inline-flex h-9 relative flex items-center m-auto">
           <SearchIcon className="left-2 absolute h-4 w-4 text-white cursor-pointer" />
           <input
             className="rounded bg-grey-blue border-none pl-8 w-96 h-8"
@@ -50,10 +50,10 @@ function Header() {
         </label>
       </div>
 
-      <div className="flex items-center space-x-5">
-        <MailIcon className="hidden md:inline-flex h-6 w-6 text-white cursor-pointer" />
-        <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer" />
-        <BookmarkIcon className="hidden md:inline-flex h-6 w-6 text-white cursor-pointer" />
+      <div className="flex items-center space-x-4">
+        <MailIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
+        <ShoppingCartIcon className="hover:bg-neutral-600 rounded h-8 w-8 p-1 text-white cursor-pointer" />
+        <BookmarkIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
         <button className="hidden md:inline-flex text-primary-blue bg-white rounded py-1.5 px-3.5">
           Login
         </button>

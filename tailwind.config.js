@@ -16,6 +16,18 @@ module.exports = {
       fontSize: {
         "2.5xl": "26px",
       },
+      padding: {
+        "1/2": "55%",
+      },
+      margin: {
+        "1/2": "30%",
+      },
+      width: {
+        "1/2": "40%",
+      },
+      boxShadow: {
+        "3xl": "100 350px 600px 150px rgba(0, 0, 0, 0.3)",
+      },
     },
   },
   plugins: [],
