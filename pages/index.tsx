@@ -8,6 +8,7 @@ import {
   SelectorIcon,
   DocumentDuplicateIcon,
 } from "@heroicons/react/solid";
+import Card from "../components/Card";
 
 export default function Home() {
   return (
@@ -37,31 +38,34 @@ export default function Home() {
         </p>
       </div>
       <TabHeader />
-      <section className="ml-28 mt-24" id="screener">
-        <p className="text-white text-4xl font-semibold pt-5 pr-80">
-          Futuristic Stock Screener
-        </p>
-        <p className="text-deep-blue text-lg pt-5 pr-1/2">
-          With 130+ filters including liquidity, profitability, debt and market
-          ratios, create your own screen in seconds
-        </p>
-        <div className="mt-5 space-y-5">
-          <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
-            <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
-            <p>Scan stocks</p>
+      <section className="pl-28 mt-24 flex justify-between " id="screener">
+        <div>
+          <p className="text-white text-4xl font-semibold pt-5 mr-80">
+            Futuristic Stock Screener
+          </p>
+          <p className="text-deep-blue text-lg pt-5 pr-1/2">
+            With 130+ filters including liquidity, profitability, debt and
+            market ratios, create your own screen in seconds
+          </p>
+          <div className="mt-5 space-y-5">
+            <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
+              <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+              <p>Scan stocks</p>
+            </div>
+            <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
+              <SelectorIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+              <p>Universe selection</p>
+            </div>
+            <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
+              <DocumentDuplicateIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+              <p>Prebuilt screens</p>
+            </div>
           </div>
-          <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
-            <SelectorIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
-            <p>Universe selection</p>
-          </div>
-          <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-1/2 h-14 flex items-center">
-            <DocumentDuplicateIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
-            <p>Prebuilt screens</p>
-          </div>
+          <button className="mt-8 rounded bg-yellow-400 w-1/2 h-12 text-white text-2xl font-semibold">
+            Start Screening
+          </button>
         </div>
-        <button className="mt-8 rounded bg-yellow-400 w-1/2 h-12 text-white text-2xl font-semibold">
-          Start Screening
-        </button>
+        <Card />
       </section>
       <section id="mmi">
         <div className="mt-36 flex justify-center">
