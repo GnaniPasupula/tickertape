@@ -2,7 +2,7 @@ import React from "react";
 
 function TabHeader() {
   return (
-    <div className="sticky top-14 bg-primary-blue ">
+    <div className="sticky z-10 top-14 bg-primary-blue">
       <div className="shadow-2xl mt-5 mx-10 px-24 flex justify-between items-center border-secondary-blue border h-20 rounded">
         <a
           href="#screener"

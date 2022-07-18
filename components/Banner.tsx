@@ -11,6 +11,7 @@ function Banner() {
         <p className="font-semibold">Can you predict the market?</p>
         <p className="mt-3 sr-48">
           Show-off your stock picking skills and compete with investors to
+          <br />
           predict the market and win amazon vouchers daily worth ₹3,000
         </p>
       </div>

@@ -15,6 +15,7 @@ module.exports = {
         "grey-blue-light": "#a2a8ae",
       },
       fontSize: {
+        xs: "0.8rem",
         "2.5xl": "26px",
       },
       padding: {
@@ -29,6 +30,7 @@ module.exports = {
         "1/2w": "75%",
         cw: "360px",
         ch: "120px",
+        pw: "400px",
       },
       boxShadow: {
         "3xl": "100 350px 600px 150px rgba(0, 0, 0, 0.3)",

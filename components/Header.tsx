@@ -7,11 +7,12 @@ import {
   SearchIcon,
   ArrowSmDownIcon,
 } from "@heroicons/react/solid";
+import LogoPopup from "./LogoPopup";
 
-function Header() {
+function Header(...props: any) {
   const [showPopup_logo, setShowPopup_logo] = React.useState(false);
   return (
-    <header className="sticky top-0 bg-primary-blue h-14 px-7 flex justify-between shadow-md">
+    <header className="sticky top-0 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
       <div className="flex items-center">
         <img
           src="https://www.freelogovectors.net/svg12/tickertape_logo-freelogovectors.net.svg"
@@ -21,23 +22,16 @@ function Header() {
           className="cursor-pointer bg-transparent"
         />
         <h3
-          onClick={() => setShowPopup_logo(true)}
+          onClick={() => {
+            setShowPopup_logo(true);
+            console.log("PopUp Open");
+          }}
           className="hover:bg-neutral-600 text-white cursor-pointer font-semibold text-lg"
         >
           tickertape
         </h3>
         <ArrowSmDownIcon className="hidden md:inline-flex h-6 w-6 text-white cursor-pointer" />
-
-        {showPopup_logo ? (
-          <div className="bg-secondary-blue rounded-lg shadow-lg p-4">
-            <div className="top" onClick={() => setShowPopup_logo(false)}>
-              <div className="pl-1.5">
-                <ArrowLeftIcon className="h-5 w-5 text-grey-blue" />
-                <p className="h-5 w-5 text-grey-blue">Back to home</p>
-              </div>
-            </div>
-          </div>
-        ) : null}
+        {showPopup_logo && <LogoPopup setShowPopup_logo={setShowPopup_logo} />}
       </div>
       <div className="flex items-center">
         <label className="hidden md:inline-flex h-9 relative flex items-center m-auto">
