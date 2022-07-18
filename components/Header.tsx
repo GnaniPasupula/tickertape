@@ -12,7 +12,7 @@ import LogoPopup from "./LogoPopup";
 function Header(...props: any) {
   const [showPopup_logo, setShowPopup_logo] = React.useState(false);
   return (
-    <header className="sticky top-0 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
+    <header className="sticky z-50 top-0 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
       <div className="flex items-center">
         <img
           src="https://www.freelogovectors.net/svg12/tickertape_logo-freelogovectors.net.svg"
