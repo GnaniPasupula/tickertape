@@ -18,7 +18,7 @@ function LogoPopup(props: any) {
       <div className="flex justify-start p-2">
         <ArrowLeftIcon
           onClick={() => {
-            console.log("PopUp Close");
+            // console.log("PopUp Close");
             props.setShowPopup_logo(false);
           }}
           className="pointer-cursor h-5 w-5 text-grey-blue"

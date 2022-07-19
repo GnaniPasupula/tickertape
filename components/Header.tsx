@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/solid";
 import LogoPopup from "./LogoPopup";
 
-function Header(...props: any) {
+function Header() {
   const [showPopup_logo, setShowPopup_logo] = React.useState(false);
   return (
     <header className="sticky z-50 top-0 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
@@ -24,7 +24,7 @@ function Header(...props: any) {
         <h3
           onClick={() => {
             setShowPopup_logo(true);
-            console.log("PopUp Open");
+            // console.log("PopUp Open");
           }}
           className="hover:bg-neutral-600 text-white cursor-pointer font-semibold text-lg"
         >
