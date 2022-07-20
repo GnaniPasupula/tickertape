@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "../components/Header";
 import Topscroller from "../components/Topscroller";
 import Head from "next/head";
@@ -9,8 +10,13 @@ import {
   DocumentDuplicateIcon,
 } from "@heroicons/react/solid";
 import Card from "../components/Card";
-
+import { getStockData } from "./api/finnhub";
 export default function Home() {
+  const [stockName, setStockName] = React.useState("");
+  if (stockName.length > 0) {
+    console.log("From page stockName is " + stockName);
+    getStockData(stockName);
+  }
   return (
     <div>
       <Head>
@@ -21,7 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Topscroller />
-      <Header />
+      <Header setStockName={setStockName} />
       <div className="px-28">
         <p className="text-white text-5xl font-semibold pt-60">
           Guide your portfolio to the stars

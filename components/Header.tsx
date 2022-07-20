@@ -1,4 +1,5 @@
 import React from "react";
+import { useId } from "react";
 import {
   ArrowLeftIcon,
   ShoppingCartIcon,
@@ -9,10 +10,13 @@ import {
 } from "@heroicons/react/solid";
 import LogoPopup from "./LogoPopup";
 
-function Header() {
+function Header(props: any) {
+  const id = useId();
   const [showPopup_logo, setShowPopup_logo] = React.useState(false);
+  const [input, setInput] = React.useState("");
+
   return (
-    <header className="sticky z-50 top-0 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
+    <header className="sticky z-50 top-7 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
       <div className="flex items-center">
         <img
           src="https://www.freelogovectors.net/svg12/tickertape_logo-freelogovectors.net.svg"
@@ -34,12 +38,26 @@ function Header() {
         {showPopup_logo && <LogoPopup setShowPopup_logo={setShowPopup_logo} />}
       </div>
       <div className="flex items-center">
-        <label className="hidden md:inline-flex h-9 relative flex items-center m-auto">
+        <label
+          htmlFor={id}
+          className="hidden md:inline-flex h-9 relative flex items-center m-auto"
+        >
           <SearchIcon className="left-2 absolute h-4 w-4 text-white cursor-pointer" />
           <input
+            id={id}
             className="rounded bg-grey-blue border-none pl-8 w-96 h-8"
             type="text"
             placeholder="Search stocks, indices, ETFs, Mutual Funds or br"
+            value={input}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                console.log("Entered Stock is " + input);
+                props.setStockName(input);
+              }
+            }}
+            onChange={(e) => {
+              setInput(e.target.value);
+            }}
           />
         </label>
       </div>
