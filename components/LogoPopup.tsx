@@ -21,8 +21,9 @@ function LogoPopup(props: any) {
             // console.log("PopUp Close");
             props.setShowPopup_logo(false);
           }}
-          className="pointer-cursor h-5 w-5 text-grey-blue"
+          className="pointer-cursor h-5 w-5 mr-2 text-deep-blue"
         />
+        <p className="text-white text-sm text-deep-blue">Back to home</p>,
       </div>
       <div className="p-2 grid grid-cols-4 mt-2 mr-4">
         <div className="flex-col flex items-center">

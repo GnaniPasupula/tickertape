@@ -89,8 +89,8 @@ export default function Home() {
           Market Mood Index
         </p>
         <p className="text-deep-blue text-lg pt-5 flex justify-center mx-1/2">
-          With 130+ filters including liquidity, profitability, debt and market
-          ratios, create your own screen in seconds
+          MMI is a sentiment tool that describes the current mood in the market
+          as emotions, ranging from extreme fear to extreme greed
         </p>
         <div className="flex justify-center">
           <button className="rounded bg-yellow-400 w-72 h-10 text-white text-xl font-semibold mt-8">

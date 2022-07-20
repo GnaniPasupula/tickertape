@@ -16,7 +16,7 @@ function Header(props: any) {
   const [input, setInput] = React.useState("");
 
   return (
-    <header className="sticky z-50 top-7 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
+    <header className="sticky z-40 top-7 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
       <div className="flex items-center">
         <img
           src="https://www.freelogovectors.net/svg12/tickertape_logo-freelogovectors.net.svg"
