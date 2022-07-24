@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Topscroller from "../components/Topscroller";
 import Head from "next/head";
@@ -11,12 +11,35 @@ import {
 } from "@heroicons/react/solid";
 import Card from "../components/Card";
 import { getStockData } from "./api/finnhub";
+import {
+  fiftyTwoWeekHigh,
+  fiftyTwoWeekLow,
+  dividendYield,
+  peRatio,
+  beta,
+  yearlyReturn,
+  weeklyReturn,
+  companyName,
+  symbol,
+  industry,
+  webURL,
+  logo,
+} from "./api/finnhub";
+
+const renderData = async (stockName: any) => {
+  await getStockData(stockName);
+};
+
 export default function Home() {
   const [stockName, setStockName] = React.useState("");
+
   if (stockName.length > 0) {
-    console.log("From page stockName is " + stockName);
-    getStockData(stockName);
+    renderData(stockName);
+    // getStockData(stockName);
   }
+
+  console.log("From indexpage company is " + companyName);
+
   return (
     <div>
       <Head>
@@ -26,7 +49,20 @@ export default function Home() {
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Topscroller />
+      <Topscroller
+        fiftyTwoWeekHigh={fiftyTwoWeekHigh}
+        fiftyTwoWeekLow={fiftyTwoWeekLow}
+        dividendYield={dividendYield}
+        peRatio={peRatio}
+        beta={beta}
+        yearlyReturn={yearlyReturn}
+        weeklyReturn={weeklyReturn}
+        companyName={companyName}
+        symbol={symbol}
+        industry={industry}
+        webURL={webURL}
+        logo={logo}
+      />
       <Header setStockName={setStockName} />
       <div className="px-28">
         <p className="text-white text-5xl font-semibold pt-60">

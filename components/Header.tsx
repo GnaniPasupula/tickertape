@@ -51,7 +51,7 @@ function Header(props: any) {
             value={input}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                console.log("Entered Stock is " + input);
+                // console.log("Entered Stock is " + input);
                 props.setStockName(input);
               }
             }}

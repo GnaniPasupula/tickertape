@@ -33,7 +33,9 @@ function StockPopup(props: any) {
       <div className="bg-grey h-20 rounded border-b border-grey-dark p-4 flex items-center justify-between">
         <div className="space-y-1">
           <div className="flex items-center space-x-2">
-            <p className="text-lg">Bajaj Finance Ltd</p>
+            <p className="text-lg">
+              {props.companyName ? props.companyName : "Bajaj Finance Ltd"}
+            </p>
             <p className="text-sm text-grey-font">BAJFINANCE</p>
           </div>
           <div className="flex items-center space-x-2">

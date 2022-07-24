@@ -4,6 +4,20 @@ const api_key = finnhub.ApiClient.instance.authentications["api_key"];
 api_key.apiKey = "cbba74qad3i91bfqh760";
 const finnhubClient = new finnhub.DefaultApi();
 
+const fiftyTwoWeekHigh = null;
+const fiftyTwoWeekLow = null;
+const dividendYield = null;
+const peRatio = null;
+const beta = null;
+const yearlyReturn = null;
+const weeklyReturn = null;
+const companyName = null;
+const symbol = null;
+const industry = null;
+const webURL = null;
+const logo = null;
+const flag = false;
+
 export const getStockData = async (stock) => {
   stock = stock.toUpperCase();
   //stock = "AMZN";
@@ -11,26 +25,26 @@ export const getStockData = async (stock) => {
     stock,
     "all",
     (error, data, response) => {
-      const fiftyTwoWeekHigh = data.metric["52WeekHigh"];
-      console.log("52W High " + fiftyTwoWeekHigh);
+      fiftyTwoWeekHigh = data.metric["52WeekHigh"];
+      // console.log("52W High " + fiftyTwoWeekHigh);
 
-      const fiftyTwoWeekLow = data.metric["52WeekLow"];
-      console.log("52W Low " + fiftyTwoWeekLow);
+      fiftyTwoWeekLow = data.metric["52WeekLow"];
+      // console.log("52W Low " + fiftyTwoWeekLow);
 
-      const dividendYield = data.metric.dividendYieldIndicatedAnnual;
-      console.log("Div. Yield " + dividendYield);
+      dividendYield = data.metric.dividendYieldIndicatedAnnual;
+      // console.log("Div. Yield " + dividendYield);
 
-      const peRatio = data.metric.peInclExtraTTM;
-      console.log("PE Ratio " + peRatio);
+      peRatio = data.metric.peInclExtraTTM;
+      // console.log("PE Ratio " + peRatio);
 
-      const beta = data.metric.beta;
-      console.log("Beta " + beta);
+      beta = data.metric.beta;
+      // console.log("Beta " + beta);
 
-      const yearlyReturn = data.metric["52WeekPriceReturnDaily"];
-      console.log("Yearly Return " + yearlyReturn);
+      yearlyReturn = data.metric["52WeekPriceReturnDaily"];
+      // console.log("Yearly Return " + yearlyReturn);
 
-      const weeklyReturn = data.metric["5DayPriceReturnDaily"];
-      console.log("Weekly Return " + weeklyReturn);
+      weeklyReturn = data.metric["5DayPriceReturnDaily"];
+      // console.log("Weekly Return " + weeklyReturn);
 
       //   console.log(data.metric);
     }
@@ -38,26 +52,43 @@ export const getStockData = async (stock) => {
 
   finnhubClient.quote(stock, (error, data, response) => {
     const currentPrice = data.c;
-    console.log("Current Price " + currentPrice);
+    // console.log("Current Price " + currentPrice);
     //   console.log(data);
   });
 
   finnhubClient.companyProfile2({ symbol: stock }, (error, data, response) => {
-    const companyName = data.name;
-    console.log("Company Name " + companyName);
+    companyName = data.name;
+    console.log("Company Name from API " + companyName);
 
-    const symbol = data.ticker;
-    console.log("Symbol " + symbol);
+    symbol = data.ticker;
+    // console.log("Symbol " + symbol);
 
-    const industry = data.finnhubIndustry;
-    console.log("Industry " + industry);
+    industry = data.finnhubIndustry;
+    // console.log("Industry " + industry);
 
-    const webURL = data.weburl;
-    console.log("Web URL " + webURL);
+    webURL = data.weburl;
+    // console.log("Web URL " + webURL);
 
-    const logo = data.logo;
-    console.log("Logo " + logo);
+    logo = data.logo;
+    // console.log("Logo " + logo);
 
     //   console.log(data);
   });
+
+  flag = true;
+};
+
+export {
+  fiftyTwoWeekHigh,
+  fiftyTwoWeekLow,
+  dividendYield,
+  peRatio,
+  beta,
+  yearlyReturn,
+  weeklyReturn,
+  companyName,
+  symbol,
+  industry,
+  webURL,
+  logo,
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import StockPopup from "./StockPopup";
 
-function Topscroller() {
+function Topscroller(props: any) {
   const [showPopup_stock, setShowPopup_stock] = React.useState(false);
   const [position, setPosition] = React.useState(0);
 
@@ -22,6 +22,18 @@ function Topscroller() {
         <StockPopup
           //setShowPopup_stock={setShowPopup_stock}
           Position={position}
+          fiftyTwoWeekHigh={props.fiftyTwoWeekHigh}
+          fiftyTwoWeekLow={props.fiftyTwoWeekLow}
+          dividendYield={props.dividendYield}
+          peRatio={props.peRatio}
+          beta={props.beta}
+          yearlyReturn={props.yearlyReturn}
+          weeklyReturn={props.weeklyReturn}
+          companyName={props.companyName}
+          symbol={props.symbol}
+          industry={props.industry}
+          webURL={props.webURL}
+          logo={props.logo}
         />
       )}
     </div>
