@@ -1,10 +1,7 @@
 import {
   BookOpenIcon,
   ChartPieIcon,
-  FilterIcon,
-  PresentationChartBarIcon,
   PresentationChartLineIcon,
-  SelectorIcon,
   ZoomInIcon,
 } from "@heroicons/react/solid";
 import React from "react";

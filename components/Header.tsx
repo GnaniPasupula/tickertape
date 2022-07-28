@@ -1,7 +1,6 @@
 import React from "react";
 import { useId } from "react";
 import {
-  ArrowLeftIcon,
   ShoppingCartIcon,
   BookmarkIcon,
   MailIcon,
