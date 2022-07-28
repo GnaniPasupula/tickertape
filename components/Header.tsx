@@ -9,11 +9,13 @@ import {
   ChevronDownIcon,
 } from "@heroicons/react/solid";
 import LogoPopup from "./LogoPopup";
+import { useRouter } from "next/router";
 
 function Header(props: any) {
   const id = useId();
   const [showPopup_logo, setShowPopup_logo] = React.useState(false);
   const [input, setInput] = React.useState("");
+  const router = useRouter();
 
   return (
     <header className="sticky z-40 top-7 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
@@ -67,7 +69,10 @@ function Header(props: any) {
         <MailIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
         <ShoppingCartIcon className="hover:bg-neutral-600 rounded h-8 w-8 p-1 text-white cursor-pointer" />
         <BookmarkIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
-        <button className="hidden md:inline-flex text-primary-blue bg-white rounded py-1.5 px-3.5">
+        <button
+          onClick={() => router.push("/login")}
+          className="hidden md:inline-flex text-primary-blue bg-white rounded py-1.5 px-3.5"
+        >
           Login
         </button>
       </div>

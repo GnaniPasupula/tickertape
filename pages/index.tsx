@@ -11,8 +11,6 @@ import {
   DocumentDownloadIcon,
   ColorSwatchIcon,
   GlobeAltIcon,
-  GlobeIcon,
-  InformationCircleIcon,
   MapIcon,
   ClockIcon,
   ChartSquareBarIcon,
