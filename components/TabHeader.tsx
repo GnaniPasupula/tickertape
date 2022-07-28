@@ -25,9 +25,12 @@ function TabHeader() {
           stocks
         </a>
         <p className="text-secondary-blue text-4xl">l</p>
-        <p className="cursor-pointer text-grey-blue-light font-semibold text-2xl hover:text-2.5xl hover:underline underline-offset-10 decoration-yellow-400">
+        <a
+          href="#learn"
+          className="cursor-pointer text-grey-blue-light font-semibold text-2xl hover:text-2.5xl hover:underline underline-offset-10 decoration-yellow-400"
+        >
           learn
-        </p>
+        </a>
       </div>
     </div>
   );

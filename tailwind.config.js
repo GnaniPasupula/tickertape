@@ -26,7 +26,8 @@ module.exports = {
         "1/2": "35%",
       },
       margin: {
-        "1/2": "30%",
+        "1/2": "25%",
+        "1/4": "15%",
         half: "50%",
       },
       width: {
@@ -35,7 +36,7 @@ module.exports = {
         cw: "360px",
         ch: "120px",
         pw: "400px",
-        ps: "440px",
+        ps: "420px",
       },
       height: {
         ph: "400px",

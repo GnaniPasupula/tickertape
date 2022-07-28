@@ -12,11 +12,7 @@ const imgs2 = [
   "https://www.tickertape.in/landingResources/images/carousel/EventsNewsDesktop.jpg",
 ];
 function Card() {
-  return (
-    <div className="bg-white mt-10 shadow-2xl">
-      <img src={imgs1[0]} />
-    </div>
-  );
+  return <img className="mt-10 shadow-2xl" src={imgs1[0]} />;
 }
 
 export default Card;

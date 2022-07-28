@@ -16,11 +16,10 @@ const symbol = null;
 const industry = null;
 const webURL = null;
 const logo = null;
-const flag = false;
 
 export const getStockData = async (stock) => {
   stock = stock.toUpperCase();
-  //stock = "AMZN";
+  // stock = "AMZN";
   finnhubClient.companyBasicFinancials(
     stock,
     "all",
@@ -58,7 +57,7 @@ export const getStockData = async (stock) => {
 
   finnhubClient.companyProfile2({ symbol: stock }, (error, data, response) => {
     companyName = data.name;
-    console.log("Company Name from API " + companyName);
+    // console.log("Company Name from API " + companyName);
 
     symbol = data.ticker;
     // console.log("Symbol " + symbol);
@@ -75,7 +74,20 @@ export const getStockData = async (stock) => {
     //   console.log(data);
   });
 
-  flag = true;
+  return {
+    fiftyTwoWeekHigh,
+    fiftyTwoWeekLow,
+    dividendYield,
+    peRatio,
+    beta,
+    yearlyReturn,
+    weeklyReturn,
+    companyName,
+    symbol,
+    industry,
+    webURL,
+    logo,
+  };
 };
 
 export {
