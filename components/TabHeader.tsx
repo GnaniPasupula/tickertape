@@ -3,6 +3,9 @@ import {
   ChartPieIcon,
   FilterIcon,
   PresentationChartBarIcon,
+  PresentationChartLineIcon,
+  SelectorIcon,
+  ZoomInIcon,
 } from "@heroicons/react/solid";
 import React from "react";
 
@@ -11,7 +14,7 @@ function TabHeader() {
     <div className="sticky z-10 top-20 bg-primary-blue">
       <div className="shadow-2xl mt-5 mx-10 px-24 flex justify-between items-center border-secondary-blue border h-22 rounded">
         <div className="group flex items-center cursor-pointer space-x-2">
-          <FilterIcon className="bg-grey-blue-light rounded-full h-7 w-7 group-hover:h-8 group-hover:w-8 text-white cursor-pointer" />
+          <ZoomInIcon className="bg-grey-blue-light rounded-full h-7 w-7 group-hover:h-8 group-hover:w-8 text-white cursor-pointer" />
           <a
             href="#screener"
             className="text-grey-blue-light font-semibold text-2xl group-hover:text-2.5xl group-hover:underline underline-offset-10 decoration-yellow-400"
@@ -32,7 +35,7 @@ function TabHeader() {
 
         <p className="text-secondary-blue text-4xl">l</p>
         <div className="group flex items-center cursor-pointer space-x-2">
-          <PresentationChartBarIcon className="bg-grey-blue-light rounded-full h-7 w-7 group-hover:h-8 group-hover:w-8 text-white cursor-pointer" />
+          <PresentationChartLineIcon className="bg-grey-blue-light rounded-full h-7 w-7 group-hover:h-8 group-hover:w-8 text-white cursor-pointer" />
           <a
             href="#stocks"
             className="text-grey-blue-light font-semibold text-2xl group-hover:text-2.5xl group-hover:underline underline-offset-10 decoration-yellow-400"

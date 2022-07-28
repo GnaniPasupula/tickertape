@@ -14,6 +14,9 @@ import {
   GlobeIcon,
   InformationCircleIcon,
   MapIcon,
+  ClockIcon,
+  ChartSquareBarIcon,
+  NewspaperIcon,
 } from "@heroicons/react/solid";
 import Card from "../components/Card";
 import { getStockData } from "./api/finnhub";
@@ -110,15 +113,15 @@ export default function Home() {
           </p>
           <div className="mt-5 space-y-5">
             <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-pw h-14 flex items-center">
-              <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+              <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-1 text-white cursor-pointer" />
               <p>Scan stocks</p>
             </div>
             <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-pw h-14 flex items-center">
-              <SelectorIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+              <SelectorIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-1 text-white cursor-pointer" />
               <p>Universe selection</p>
             </div>
             <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-pw h-14 flex items-center">
-              <DocumentDuplicateIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+              <DocumentDuplicateIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-1 text-white cursor-pointer" />
               <p>Prebuilt screens</p>
             </div>
           </div>
@@ -164,15 +167,15 @@ export default function Home() {
             announcements in one place
           </p>
           <div className="cursor-pointer text-white text-2xl font-semibold mt-12 hover:bg-neutral-600 rounded-full w-ps h-14 flex items-center">
-            <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+            <ClockIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-1 text-white cursor-pointer" />
             <p>Performance forecast</p>
           </div>
           <div className="cursor-pointer text-white text-2xl font-semibold mt-5 hover:bg-neutral-600 rounded-full w-ps h-14 flex items-center">
-            <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+            <ChartSquareBarIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-1 text-white cursor-pointer" />
             <p>Holding analysis</p>
           </div>
           <div className="cursor-pointer text-white text-2xl font-semibold mt-5 hover:bg-neutral-600 rounded-full w-ps h-14 flex items-center">
-            <FilterIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-2 text-white cursor-pointer" />
+            <NewspaperIcon className="bg-yellow-400 rounded-full ml-2 mr-7 h-10 w-10 p-1 text-white cursor-pointer" />
             <p>News & events</p>
           </div>
           <button className="mt-8 rounded bg-yellow-400 w-ps h-12 text-white text-1.5xl font-semibold">
