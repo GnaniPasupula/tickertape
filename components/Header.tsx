@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useId } from "react";
 import {
   ShoppingCartIcon,
@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 
 function Header(props: any) {
   const id = useId();
-  const [showPopup_logo, setShowPopup_logo] = React.useState(false);
+  const [showPopup_logo, setShowPopup_logo] = useState(false);
   const [input, setInput] = React.useState("");
   const router = useRouter();
 
@@ -39,7 +39,7 @@ function Header(props: any) {
         <ChevronDownIcon className="hidden md:inline-flex h-6 w-6 text-white cursor-pointer" />
         {showPopup_logo && <LogoPopup setShowPopup_logo={setShowPopup_logo} />}
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center justify-center">
         <label
           htmlFor={id}
           className="hidden md:inline-flex h-9 relative flex items-center m-auto"
@@ -47,7 +47,7 @@ function Header(props: any) {
           <SearchIcon className="left-2 absolute h-4 w-4 text-white cursor-pointer" />
           <input
             id={id}
-            className="rounded bg-grey-blue border-none pl-8 w-96 h-8"
+            className="rounded bg-grey-blue border-none pl-8 w-96 h-8 outline-none"
             type="text"
             placeholder="Search stocks, indices, ETFs, Mutual Funds or br"
             value={input}
@@ -55,6 +55,8 @@ function Header(props: any) {
               if (e.key === "Enter") {
                 // console.log("Entered Stock is " + input);
                 props.setStockName(input);
+                //setShowWindow_SearchStock(true);
+                router.push("/stock");
               }
             }}
             onChange={(e) => {

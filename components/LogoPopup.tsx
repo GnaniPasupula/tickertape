@@ -10,21 +10,24 @@ import {
   EmojiHappyIcon,
 } from "@heroicons/react/outline";
 import { ChatAltIcon } from "@heroicons/react/solid";
+import { useRouter } from "next/router";
 import React from "react";
 import BannerSm from "./BannerSm";
 
 function LogoPopup(props: any) {
+  const router = useRouter();
   return (
     // setShowPopup_logo && (
     <div className="bg-secondary-blue rounded-md shadow-2xl p-4 w-pw absolute z-50 top-20">
-      <div className="flex justify-start p-2">
-        <ArrowLeftIcon
-          onClick={() => {
-            // console.log("PopUp Close");
-            props.setShowPopup_logo(false);
-          }}
-          className="pointer-cursor h-5 w-5 mr-2 text-deep-blue"
-        />
+      <div
+        className="flex justify-start p-2 w-1/2 cursor-pointer"
+        onClick={() => {
+          // console.log("PopUp Close");
+          props.setShowPopup_logo(false);
+          router.push("/");
+        }}
+      >
+        <ArrowLeftIcon className="pointer-cursor h-5 w-5 mr-2 text-deep-blue" />
         <p className="text-white text-sm text-deep-blue">Back to home</p>,
       </div>
       <div className="p-2 grid grid-cols-4 mr-4">

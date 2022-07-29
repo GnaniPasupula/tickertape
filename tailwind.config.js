@@ -38,17 +38,22 @@ module.exports = {
         pw: "400px",
         ps: "420px",
         "1/4": "35%",
+        "1/5": "30%",
       },
       height: {
         ph: "400px",
         22: "88px",
         "3/4": "75%",
+        "3/4vh": "80vh",
       },
       boxShadow: {
         "3xl": "100 350px 600px 150px rgba(0, 0, 0, 0.3)",
       },
       textUnderlineOffset: {
         10: "27px",
+      },
+      zIndex: {
+        100: "100",
       },
     },
   },

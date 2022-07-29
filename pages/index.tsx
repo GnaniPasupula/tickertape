@@ -61,7 +61,7 @@ export default function Home() {
   // console.log("From indexpage company is " + companyName);
 
   return (
-    <div>
+    <div className="bg-primary-blue">
       <Head>
         <title>
           Stock Analysis & Best Financial Tools for Indian Stock Market
@@ -84,6 +84,7 @@ export default function Home() {
         logo={logo}
       />
       <Header setStockName={setStockName} />
+
       <div className="px-28">
         <p className="text-white text-5xl font-semibold pt-60">
           Guide your portfolio to the stars

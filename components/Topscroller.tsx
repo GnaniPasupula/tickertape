@@ -7,7 +7,7 @@ function Topscroller(props: any) {
 
   return (
     <div
-      className="bg-primary-blue h-7 sticky top-0 z-50 rounded border-secondary-blue border-b"
+      className="bg-primary-blue h-7 sticky top-0 z-50 border-secondary-blue border-b"
       onClick={(e) => {
         setShowPopup_stock(!showPopup_stock);
         setPosition(e.clientX);
