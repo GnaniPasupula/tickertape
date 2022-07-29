@@ -37,10 +37,12 @@ module.exports = {
         ch: "120px",
         pw: "400px",
         ps: "420px",
+        "1/4": "35%",
       },
       height: {
         ph: "400px",
         22: "88px",
+        "3/4": "75%",
       },
       boxShadow: {
         "3xl": "100 350px 600px 150px rgba(0, 0, 0, 0.3)",
