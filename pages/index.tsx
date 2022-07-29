@@ -193,8 +193,11 @@ export default function Home() {
         <div className="flex mt-10 pl-10 space-x-16">
           <CardTwo />
           <div>
-            <p className="text-white font-semibold text-3xl">
-              Elementary economics
+            <p
+              className="text-white font-semibold text-3xl first-letter:text-7xl first-letter:text-yellow-400
+              first-letter:mr-3"
+            >
+              1 Elementary economics
             </p>
             <p className="text-deep-blue text-lg pt-5">
               Decode the general state of an economy and drivers that lead to
@@ -209,8 +212,8 @@ export default function Home() {
         </div>
         <div>
           <div>
-            <div className="cursor-pointer text-white text-xl font mt-3 mx-14 px-5 rounded-full w-ps h-14 flex items-center justify-between">
-              <div className="flex items-center">
+            <div className="cursor-pointer text-white text-xl hover:bg-neutral-600 mt-3 mx-14 px-5 rounded-full w-ps h-14 flex items-center justify-between">
+              <div className="flex items-center ">
                 <p className="rounded-full mr-7 text-yellow-400 text-4xl">2</p>
                 <p className="text-1.5xl">Equity Markets</p>
               </div>
@@ -218,7 +221,7 @@ export default function Home() {
                 <ChevronRightIcon className="font-thin h-6 w-5 text-yellow-400" />
               </div>
             </div>
-            <div className="cursor-pointer text-white text-xl font mt-2 mx-14 px-5 rounded-full w-ps h-14 flex items-center justify-between">
+            <div className="cursor-pointer text-white text-xl hover:bg-neutral-600 mt-2 mx-14 px-5 rounded-full w-ps h-14 flex items-center justify-between">
               <div className="flex  items-center">
                 <p className="rounded-full mr-7 text-yellow-400 text-4xl">3</p>
                 <p className="text-1.5xl">Investing in portfolios</p>
@@ -227,7 +230,7 @@ export default function Home() {
                 <ChevronRightIcon className="font-thin h-6 w-5 text-yellow-400" />
               </div>
             </div>
-            <div className="cursor-pointer text-white text-xl font mt-2 mx-14 px-5 rounded-full w-ps h-14 flex items-center justify-between">
+            <div className="cursor-pointer text-white text-xl hover:bg-neutral-600 mt-2 mx-14 px-5 rounded-full w-ps h-14 flex items-center justify-between">
               <div className="flex  items-center">
                 <p className="rounded-full mr-7 text-yellow-400 text-4xl">4</p>
                 <p className="text-1.5xl">Evaluating stocks </p>
