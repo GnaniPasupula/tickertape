@@ -56,7 +56,7 @@ function Header(props: any) {
                 // console.log("Entered Stock is " + input);
                 props.setStockName(input);
                 //setShowWindow_SearchStock(true);
-                router.push("/stock");
+                // router.push("/stock");
               }
             }}
             onChange={(e) => {

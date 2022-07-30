@@ -41,10 +41,17 @@ export default function Home() {
   const [companyNames, setCompanyName] = useState("Bajaj Finance Ltd");
 
   const renderData = async (stockName: any) => {
-    await getStockData(stockName).then(function (data) {
-      console.log("From api " + data.companyName);
-      setCompanyName(data.companyName ? data.companyName : "Bajaj Finance Ltd");
-    });
+    await getStockData(stockName)
+      .then(function (data) {
+        console.log("From api " + data.companyName);
+        setCompanyName(
+          data.companyName ? data.companyName : "Bajaj Finance Ltd"
+        );
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+      });
     // try {
     //   var data = await getStockData(stockName);
     //   console.log("From API " + data);
