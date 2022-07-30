@@ -1,8 +1,9 @@
-import { BookmarkIcon } from "@heroicons/react/outline";
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Topscroller from "../components/Topscroller";
+import { BookmarkIcon } from "@heroicons/react/outline";
+import { BookmarkIcon as BookmarkIconselected } from "@heroicons/react/solid";
 
 import {
   fiftyTwoWeekHigh,
@@ -21,6 +22,14 @@ import {
 
 export default function Stock() {
   const [stockName, setStockName] = useState("");
+  const [bookmarkIcon, setBookmarkIcon] = useState(false);
+  const [toast, setToast] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setToast(false);
+    }, 2000);
+  }, [toast]);
 
   return (
     <div className="bg-white">
@@ -51,7 +60,25 @@ export default function Stock() {
           <div className="flex flex-col">
             <div className="flex items-center justify-between">
               <p className="font-semibold text-lg">Bajaj Finance Ltd</p>
-              <BookmarkIcon className="cursor-pointer h-5 w-5 text-grey-font" />
+              {bookmarkIcon ? (
+                <BookmarkIconselected
+                  className="cursor-pointer h-5 w-5 text-grey-font"
+                  onClick={() => {
+                    console.log("Bookmark Clicked");
+                    setBookmarkIcon(false);
+                    setToast(false);
+                  }}
+                />
+              ) : (
+                <BookmarkIcon
+                  className="cursor-pointer h-5 w-5 text-grey-font"
+                  onClick={() => {
+                    console.log("Bookmark Clicked");
+                    setBookmarkIcon(true);
+                    setToast(true);
+                  }}
+                />
+              )}
             </div>
             <p className="font-semibold text-sm text-grey-font">BAJFINANCE</p>
             <p className="mt-1 font-semibold text-1.5xl text-black">
@@ -65,6 +92,12 @@ export default function Stock() {
             </button>
           </div>
         </div>
+
+        {toast && (
+          <div className="animate-bounce shadow-lg absolute left-[40%] top-[20%] text-sm text-white w-1/6 h-10 flex items-center bg-green-500 rounded justify-center">
+            Bookmarked
+          </div>
+        )}
       </div>
     </div>
   );
