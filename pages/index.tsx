@@ -18,39 +18,53 @@ import {
 } from "@heroicons/react/solid";
 import Card from "../components/Card";
 import { getStockData } from "./api/finnhub";
-import {
-  fiftyTwoWeekHigh,
-  fiftyTwoWeekLow,
-  dividendYield,
-  peRatio,
-  beta,
-  yearlyReturn,
-  weeklyReturn,
-  companyName,
-  symbol,
-  industry,
-  webURL,
-  logo,
-} from "./api/finnhub";
 import CardTwo from "../components/CardTwo";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Footer from "../components/Footer";
 
 export default function Home() {
   const [stockName, setStockName] = useState("");
-  const [companyNames, setCompanyName] = useState("Bajaj Finance Ltd");
+  const [companyName, setCompanyName] = useState("Bajaj Finance Ltd");
+  const [fiftyTwoWeekHigh, setFiftyTwoWeekHigh] = useState("");
+  const [fiftyTwoWeekLow, setFiftyTwoWeekLow] = useState("");
+  const [dividendYield, setDividendYield] = useState("");
+  const [peRatio, setPeRatio] = useState("");
+  const [beta, setBeta] = useState("");
+  const [yearlyReturn, setYearlyReturn] = useState("");
+  const [weeklyReturn, setWeeklyReturn] = useState("");
+  const [webURL, setWebURL] = useState("");
+  const [logo, setLogo] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [symbol, setSymbol] = useState("");
+  const [currentPrice, setCurrentPrice] = useState("");
 
   const renderData = async (stockName: any) => {
     await getStockData(stockName)
-      .then(function (data) {
-        console.log("From api " + data.companyName);
-        setCompanyName(
-          data.companyName ? data.companyName : "Bajaj Finance Ltd"
+      .then((data) => {
+        console.log(data);
+        setCompanyName(data.companyName ? data.companyName : "NA");
+        setFiftyTwoWeekHigh(
+          data.fiftyTwoWeekHigh ? data.fiftyTwoWeekHigh : "NA"
         );
+        setFiftyTwoWeekLow(data.fiftyTwoWeekLow ? data.fiftyTwoWeekLow : "NA");
+        setDividendYield(data.dividendYield ? data.dividendYield : "NA");
+        setPeRatio(data.peRatio ? data.peRatio : "NA");
+        setBeta(data.beta ? data.beta : "NA");
+        setYearlyReturn(data.yearlyReturn ? data.yearlyReturn : "NA");
+        setWeeklyReturn(data.weeklyReturn ? data.weeklyReturn : "NA");
+        setWebURL(data.webURL ? data.webURL : "NA");
+        setLogo(data.logo ? data.logo : "NA");
+        setIndustry(data.industry ? data.industry : "NA");
+        setSymbol(data.symbol ? data.symbol : "NA");
+        setCurrentPrice(data.currentPrice ? data.currentPrice : "NA");
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode);
+        console.log("Error is " + errorCode);
+      })
+      .finally(() => {
+        // console.log("Finally");
+        setStockName("");
       });
     // try {
     //   var data = await getStockData(stockName);
@@ -62,10 +76,9 @@ export default function Home() {
 
   if (stockName.length > 0) {
     renderData(stockName);
-    setStockName("");
   }
 
-  // console.log("From indexpage company is " + companyName);
+  console.log("From indexpage company is " + companyName);
 
   return (
     <div className="bg-primary-blue">
@@ -89,6 +102,7 @@ export default function Home() {
         industry={industry}
         webURL={webURL}
         logo={logo}
+        currentPrice={currentPrice}
       />
       <Header setStockName={setStockName} />
 

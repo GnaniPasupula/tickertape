@@ -1,5 +1,8 @@
 import {
   ArrowRightIcon,
+  GlobeAltIcon,
+  GlobeIcon,
+  LinkIcon,
   OfficeBuildingIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/solid";
@@ -27,20 +30,25 @@ function StockPopup(props: any) {
 
   return (
     <div
-      className={`bg-white w-ps h-ph relative top-9 rounded-md`}
+      className={`bg-white w-wspopup relative top-9 rounded-md`}
       style={lefts}
     >
       <div className="bg-grey h-20 rounded border-b border-grey-dark p-4 flex items-center justify-between">
         <div className="space-y-1">
           <div className="flex items-center space-x-2">
             <p className="font-semibold text-lg">{props.companyName}</p>
-            <p className="font-semibold text-sm text-grey-font">BAJFINANCE</p>
+            <p className="font-semibold text-sm text-grey-font">
+              {props.symbol}
+            </p>
+            <a href={props.webURL}>
+              <GlobeAltIcon className="h-5 w-5 text-grey-font cursor-pointer" />
+            </a>
           </div>
           <div className="flex items-center space-x-2">
             <OfficeBuildingIcon className="h-5 w-5 text-grey-font" />
-            <p>Financials</p>
-            <ArrowRightIcon className="h-3 w-3" />
-            <p>Consumer Finance</p>
+            <p>{props.industry}</p>
+            <ArrowRightIcon className="h-3 w-3 text-center" />
+            <p>{props.industry}</p>
           </div>
         </div>
         <div>
@@ -50,46 +58,62 @@ function StockPopup(props: any) {
       <div className="p-4">
         <div className="space-y-1">
           <p className="text-sm text-grey-blue">
-            Bajaj Finance Limited is a non-banking finance company (NBFC). The
-            Company is engaged in lending and allied activities.
+            {props.companyName} is a {props.industry} company . The Company is
+            engaged in lending and allied activities.
           </p>
           <div className="flex justify-between">
             <div>
               <p className="text-xs text-grey-blue mt-2">Last Price</p>
-              <p className="font-semibold text-1.5xl text-black">6,095.00</p>
+              <p className="font-semibold text-1.5xl text-black">
+                {props.currentPrice}
+              </p>
               <p className="text-xs text-grey-blue mt-2">Price Trend - 1YR</p>
             </div>
             <div className="space-y-1">
               <div className="grid grid-cols-2 gap-x-28 gap-y-1">
                 <div className="space-y-1">
-                  <p className="text-sm text-grey-blue mt-2">1M Return</p>
-                  <p className="font-semibold text-lg text-green-500">11.93%</p>
+                  <p className="text-sm text-grey-blue mt-2">1W Return</p>
+                  <p className="font-semibold text-md text-green-500">
+                    {props.weeklyReturn}%
+                  </p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-sm text-grey-blue mt-2">1Y Return</p>
-                  <p className="font-semibold text-lg text-green-500">0.84%</p>
+                  <p className="font-semibold text-md text-green-500">
+                    {props.yearlyReturn}%
+                  </p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm text-grey-blue mt-2">1M Return</p>
-                  <p className="font-semibold text-lg text-black">8,050.00</p>
+                  <p className="text-sm text-grey-blue mt-2">52W High</p>
+                  <p className="font-semibold text-md text-black">
+                    {props.fiftyTwoWeekHigh}
+                  </p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm text-grey-blue mt-2">1M Return</p>
-                  <p className="font-semibold text-lg text-black">5,220.00</p>
+                  <p className="text-sm text-grey-blue mt-2">52W Low</p>
+                  <p className="font-semibold text-md text-black">
+                    {props.fiftyTwoWeekLow}
+                  </p>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-x-6">
                 <div className="space-y-1">
-                  <p className="text-sm text-grey-blue mt-2">1M Return</p>
-                  <p className="font-semibold text-lg text-black">52.07</p>
+                  <p className="text-sm text-grey-blue mt-2">PE Ratio</p>
+                  <p className="font-semibold text-md text-black">
+                    {props.peRatio}
+                  </p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm text-grey-blue mt-2">1M Return</p>
-                  <p className="font-semibold text-lg text-black">1.80</p>
+                  <p className="text-sm text-grey-blue mt-2">β</p>
+                  <p className="font-semibold text-md text-black">
+                    {props.beta}
+                  </p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm text-grey-blue mt-2">1M Return</p>
-                  <p className="font-semibold text-lg text-black">0.33%</p>
+                  <p className="text-sm text-grey-blue mt-2">Div. Yield</p>
+                  <p className="font-semibold text-md text-black">
+                    {props.dividendYield}
+                  </p>
                 </div>
               </div>
             </div>

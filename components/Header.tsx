@@ -54,6 +54,8 @@ function Header(props: any) {
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 // console.log("Entered Stock is " + input);
+                e.preventDefault();
+
                 props.setStockName(input);
                 //setShowWindow_SearchStock(true);
                 // router.push("/stock");

@@ -34,6 +34,7 @@ function Topscroller(props: any) {
           industry={props.industry}
           webURL={props.webURL}
           logo={props.logo}
+          currentPrice={props.currentPrice}
         />
       )}
     </div>
