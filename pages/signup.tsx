@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import router from "next/router";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../config/firebase";
 
 export default function Signup() {
@@ -55,12 +55,21 @@ export default function Signup() {
                   const user = userCredential.user;
                   setToastMessage("Successfully signed up");
                   setToastg(true);
+                  const name = email.split("@")[0];
+                  updateProfile(auth.currentUser!, {
+                    displayName: name,
+                  });
                   //   console.log("Signed up" + user);
                 })
                 .catch((error) => {
                   const errorMessage = error.message;
                   setToastMessage(errorMessage);
                   setToastr(true);
+                })
+                .finally(() => {
+                  router.push("/");
+                  setEmail("");
+                  setPassword("");
                 });
             }}
           >

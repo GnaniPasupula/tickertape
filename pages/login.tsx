@@ -3,6 +3,8 @@ import router from "next/router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 
+// const user = auth.currentUser;
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +15,16 @@ export default function Login() {
       setToast(false);
     }, 2500);
   }, [toast]);
+
+  // if (user !== null) {
+  //   user.providerData.forEach((profile) => {
+  //     console.log("Sign-in provider: " + profile.providerId);
+  //     console.log("  Provider-specific UID: " + profile.uid);
+  //     console.log("  Name: " + profile.displayName);
+  //     console.log("  Email: " + profile.email);
+  //     console.log("  Photo URL: " + profile.photoURL);
+  //   });
+  // }
 
   return (
     <div className="flex justify-center bg-white h-screen items-center">
@@ -49,7 +61,9 @@ export default function Login() {
               signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                   const user = userCredential.user;
-                  console.log("Logged In" + user);
+                  console.log(user);
+                  console.log("Name is  " + user.displayName);
+
                   router.push("/");
                 })
                 .catch((error) => {
