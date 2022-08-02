@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import router from "next/router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "../src/store/index";
 
 // const user = auth.currentUser;
 
@@ -15,6 +17,8 @@ export default function Login() {
       setToast(false);
     }, 2500);
   }, [toast]);
+
+  const dispatch = useDispatch();
 
   // if (user !== null) {
   //   user.providerData.forEach((profile) => {
@@ -62,8 +66,7 @@ export default function Login() {
                 .then((userCredential) => {
                   const user = userCredential.user;
                   console.log(user);
-                  console.log("Name is  " + user.displayName);
-
+                  dispatch(actions.setDisplayName(user.displayName));
                   router.push("/");
                 })
                 .catch((error) => {

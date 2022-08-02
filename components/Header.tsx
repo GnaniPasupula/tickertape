@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useId } from "react";
 import {
   ShoppingCartIcon,
@@ -9,12 +9,27 @@ import {
 } from "@heroicons/react/solid";
 import LogoPopup from "./LogoPopup";
 import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
+import { auth } from "../config/firebase";
+import { actions } from "../src/store/index";
 
 function Header(props: any) {
   const id = useId();
   const [showPopup_logo, setShowPopup_logo] = useState(false);
   const [input, setInput] = React.useState("");
   const router = useRouter();
+
+  const displayName = useSelector((state: any) => state.displayName);
+  const dispatch = useDispatch();
+
+  const [toast, setToast] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setToast(false);
+    }, 2000);
+  }, [toast]);
 
   return (
     <header className="sticky z-40 top-7 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
@@ -72,13 +87,39 @@ function Header(props: any) {
         <MailIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
         <ShoppingCartIcon className="hover:bg-neutral-600 rounded h-8 w-8 p-1 text-white cursor-pointer" />
         <BookmarkIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
-        <button
-          onClick={() => router.push("/login")}
-          className="hidden md:inline-flex text-primary-blue bg-white rounded py-1.5 px-3.5"
-        >
-          Login
-        </button>
+        {displayName ? (
+          <p
+            className="text-white"
+            onClick={() => {
+              signOut(auth)
+                .then(() => {
+                  console.log("Signed Out");
+                  dispatch(actions.setDisplayName(""));
+                  setToast(true);
+                })
+                .catch((error) => {
+                  // An error happened.
+                  console.log(error);
+                });
+            }}
+          >
+            {displayName}
+          </p>
+        ) : (
+          <button
+            onClick={() => router.push("/login")}
+            className="hidden md:inline-flex text-primary-blue bg-white rounded py-1.5 px-3.5"
+          >
+            Login
+          </button>
+        )}
       </div>
+
+      {toast && (
+        <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
+          Signed Out Successfully
+        </div>
+      )}
     </header>
   );
 }
