@@ -64,7 +64,7 @@ export default function Stock() {
                 <BookmarkIconselected
                   className="cursor-pointer h-5 w-5 text-grey-font"
                   onClick={() => {
-                    console.log("Bookmark Clicked");
+                    console.log("Removed from Bookmark");
                     setBookmarkIcon(false);
                     setToast(false);
                   }}
@@ -73,7 +73,7 @@ export default function Stock() {
                 <BookmarkIcon
                   className="cursor-pointer h-5 w-5 text-grey-font"
                   onClick={() => {
-                    console.log("Bookmark Clicked");
+                    console.log("Bookmarked");
                     setBookmarkIcon(true);
                     setToast(true);
                   }}

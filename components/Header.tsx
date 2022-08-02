@@ -24,12 +24,24 @@ function Header(props: any) {
   const dispatch = useDispatch();
 
   const [toast, setToast] = useState(false);
+  const stockBookmark = useSelector((state: any) => state.stockBookmark);
+  const [toastBookmark, setToastBookmark] = useState(stockBookmark);
 
   useEffect(() => {
     setTimeout(() => {
       setToast(false);
     }, 2000);
   }, [toast]);
+
+  useEffect(() => {
+    setToastBookmark(stockBookmark);
+  }, [stockBookmark]);
+
+  if (toastBookmark === true) {
+    setTimeout(() => {
+      setToastBookmark(false);
+    }, 2000);
+  }
 
   return (
     <header className="sticky z-40 top-7 bg-primary-blue h-16 px-7 flex justify-between shadow-md">
@@ -118,6 +130,11 @@ function Header(props: any) {
       {toast && (
         <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
           Signed Out Successfully
+        </div>
+      )}
+      {toastBookmark && (
+        <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
+          Bookmarked
         </div>
       )}
     </header>

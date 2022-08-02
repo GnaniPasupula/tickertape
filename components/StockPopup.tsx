@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   ArrowRightIcon,
   GlobeAltIcon,
@@ -5,11 +6,16 @@ import {
   LinkIcon,
   OfficeBuildingIcon,
   ShoppingCartIcon,
+  BookmarkIcon as BookmarkIconselected,
 } from "@heroicons/react/solid";
 import { ArrowsExpandIcon, BookmarkIcon } from "@heroicons/react/outline";
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "../src/store/index";
 
 function StockPopup(props: any) {
+  const stockBookmark = useSelector((state: any) => state.stockBookmark);
+  const dispatch = useDispatch();
+
   var leftp = props.Position;
   const width = window.innerWidth;
   var leftf = 0;
@@ -121,7 +127,25 @@ function StockPopup(props: any) {
         </div>
       </div>
       <div className="bg-grey h-16 rounded border-t border-grey-dark p-4 flex items-center justify-between">
-        <BookmarkIcon className="hover:shadow cursor-pointer h-9 w-9 p-2 rounded bg-white border border-grey-dark text-grey-font mr-2" />
+        {stockBookmark ? (
+          <BookmarkIconselected
+            className="hover:shadow cursor-pointer h-9 w-9 p-2 rounded bg-white border border-grey-dark text-grey-font mr-2"
+            onClick={() => {
+              console.log("Removed from Bookmark");
+              dispatch(actions.setStockBookmark(false));
+              // setToast(false);
+            }}
+          />
+        ) : (
+          <BookmarkIcon
+            className="hover:shadow cursor-pointer h-9 w-9 p-2 rounded bg-white border border-grey-dark text-grey-font mr-2"
+            onClick={() => {
+              console.log("Bookmarked");
+              dispatch(actions.setStockBookmark(true));
+              // setToast(true);
+            }}
+          />
+        )}
         <button className="hover:shadow h-9 border-t border-grey-dark w-40 flex items-center bg-white">
           <ShoppingCartIcon className="h-8 w-8 p-2 rounded bg-transparent text-primary-blue" />
           <p className="text-sm text-primary-blue">Add to Basket</p>
