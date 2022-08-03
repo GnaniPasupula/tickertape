@@ -67,6 +67,7 @@ export default function Login() {
                   const user = userCredential.user;
                   console.log(user);
                   dispatch(actions.setDisplayName(user.displayName));
+                  dispatch(actions.setLoginToast(false));
                   router.push("/");
                 })
                 .catch((error) => {

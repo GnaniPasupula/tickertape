@@ -23,17 +23,18 @@ function Header(props: any) {
   const displayName = useSelector((state: any) => state.displayName);
   const dispatch = useDispatch();
 
+  // Toast for Sign Out
   const [toast, setToast] = useState(false);
-  const stockBookmark = useSelector((state: any) => state.stockBookmark);
-  const [toastBookmark, setToastBookmark] = useState(stockBookmark);
-
-  const [bookmarkDropdown, setBookmarkDropdown] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setToast(false);
     }, 2000);
   }, [toast]);
+
+  // Toast for Bookmark
+  const stockBookmark = useSelector((state: any) => state.stockBookmark);
+  const [toastBookmark, setToastBookmark] = useState(stockBookmark);
 
   useEffect(() => {
     setToastBookmark(stockBookmark);
@@ -42,6 +43,22 @@ function Header(props: any) {
   if (toastBookmark === true) {
     setTimeout(() => {
       setToastBookmark(false);
+    }, 2000);
+  }
+
+  const [bookmarkDropdown, setBookmarkDropdown] = useState(false);
+
+  // Toast for login
+  const loginToast = useSelector((state: any) => state.loginToast);
+  const [toastLogin, setToastLogin] = useState(loginToast);
+
+  useEffect(() => {
+    setToastLogin(loginToast);
+  }, [loginToast]);
+
+  if (toastLogin === true) {
+    setTimeout(() => {
+      setToastLogin(false);
     }, 2000);
   }
 
@@ -142,6 +159,11 @@ function Header(props: any) {
       {toastBookmark && (
         <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
           Bookmarked
+        </div>
+      )}
+      {toastLogin && (
+        <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
+          Log in for Bookmark
         </div>
       )}
     </header>

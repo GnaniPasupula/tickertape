@@ -4,13 +4,17 @@ const displayNameSlice=createSlice({
     name:"displayName",
     initialState:{
         displayName:"",
-        stockBookmark:false
+        stockBookmark:false,
+        loginToast:false,
     },
     reducers:{
         setDisplayName:(state,action)=>{
             state.displayName=action.payload;
         },setStockBookmark:(state,action)=>{
             state.stockBookmark=action.payload;
+        }
+        ,setLoginToast:(state,action)=>{
+            state.loginToast=action.payload;
         }
     }
 });

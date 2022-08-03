@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import {
   ArrowRightIcon,
   GlobeAltIcon,
-  GlobeIcon,
-  LinkIcon,
   OfficeBuildingIcon,
   ShoppingCartIcon,
   BookmarkIcon as BookmarkIconselected,
@@ -11,6 +9,8 @@ import {
 import { ArrowsExpandIcon, BookmarkIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../src/store/index";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../config/firebase";
 
 function StockPopup(props: any) {
   const stockBookmark = useSelector((state: any) => state.stockBookmark);
@@ -32,6 +32,25 @@ function StockPopup(props: any) {
 
   let lefts = {
     left: leftf + "px",
+  };
+
+  const addStockBookmark = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "StockBookmark"), {
+        CompanyName: props.companyName,
+        CurrentPrice: props.currentPrice,
+        Symbol: props.symbol,
+        URL: props.webURL,
+        WeeklyReturn: props.weeklyReturn,
+        Industry: props.industry,
+      });
+      console.log("Document written with ID: ", docRef.id);
+      console.log("Bookmarked");
+      dispatch(actions.setStockBookmark(true));
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      dispatch(actions.setLoginToast(true));
+    }
   };
 
   return (
@@ -140,8 +159,7 @@ function StockPopup(props: any) {
           <BookmarkIcon
             className="hover:shadow cursor-pointer h-9 w-9 p-2 rounded bg-white border border-grey-dark text-grey-font mr-2"
             onClick={() => {
-              console.log("Bookmarked");
-              dispatch(actions.setStockBookmark(true));
+              addStockBookmark();
               // setToast(true);
             }}
           />
