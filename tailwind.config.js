@@ -16,11 +16,13 @@ module.exports = {
         grey: "#f9fafb",
         "grey-dark": "#e2e5e9",
         "grey-font": "#81878c",
+        "grey-font-light": "#d0d2d4",
       },
       fontSize: {
         xs: "0.8rem",
         "2.5xl": "26px",
         "1.5xl": "22px",
+        "1.5base": "16.3px",
       },
       padding: {
         "1/2": "35%",

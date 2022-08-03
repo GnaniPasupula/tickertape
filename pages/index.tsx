@@ -305,6 +305,7 @@ export default function Home() {
         </div>
       </div>
       <Footer />
+      <div className="bg-primary-blue"></div>
     </div>
   );
 }
