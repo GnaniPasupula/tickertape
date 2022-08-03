@@ -1,3 +1,9 @@
+import {
+  HeartIcon,
+  MoonIcon,
+  SparklesIcon,
+  SunIcon,
+} from "@heroicons/react/solid";
 import React from "react";
 
 function Footer() {
@@ -66,7 +72,16 @@ function Footer() {
           <p className="text-grey-font-light mt-1.5 text-1.5base">Support</p>
           <p className="text-grey-font-light mt-1.5 text-1.5base">Contact Us</p>
         </div>
-        <div className="flex flex-col w-[17%]"></div>
+        <div className="flex flex-col gap-y-5 ">
+          <div className="flex gap-x-10">
+            <HeartIcon className="text-white h-6 w-6" />
+            <SparklesIcon className="text-white h-6 w-6" />
+          </div>
+          <div className="flex gap-x-10">
+            <MoonIcon className="text-white h-6 w-6" />
+            <SunIcon className="text-white h-6 w-6" />
+          </div>
+        </div>
       </div>
     </div>
   );
