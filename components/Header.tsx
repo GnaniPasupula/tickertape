@@ -27,6 +27,8 @@ function Header(props: any) {
   const stockBookmark = useSelector((state: any) => state.stockBookmark);
   const [toastBookmark, setToastBookmark] = useState(stockBookmark);
 
+  const [bookmarkDropdown, setBookmarkDropdown] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       setToast(false);
@@ -98,7 +100,12 @@ function Header(props: any) {
       <div className="flex items-center space-x-4">
         <MailIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
         <ShoppingCartIcon className="hover:bg-neutral-600 rounded h-8 w-8 p-1 text-white cursor-pointer" />
-        <BookmarkIcon className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer" />
+        <BookmarkIcon
+          className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer"
+          onClick={() => {
+            router.push("/bookmark");
+          }}
+        />
         {displayName ? (
           <p
             className="text-white"
@@ -115,7 +122,7 @@ function Header(props: any) {
                 });
             }}
           >
-            {displayName}
+            Hi , {displayName}
           </p>
         ) : (
           <button
