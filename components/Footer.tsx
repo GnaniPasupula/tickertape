@@ -37,30 +37,42 @@ function Footer() {
           <p className="cursor-pointer font-semibold text-lg text-deep-blue">
             Products
           </p>
-          <p className="text-grey-font-light mt-4 text-1.5base">
+          <p className="cursor-pointer text-grey-font-light mt-4 text-1.5base">
             Stock Screener
           </p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
             MF Screener
           </p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">MMI</p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
+            MMI
+          </p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
             Stock Deals
           </p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">Learn</p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">Blog</p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
+            Learn
+          </p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
+            Blog
+          </p>
         </div>
         <div className="flex flex-col w-[17%]">
           <p className="cursor-pointer font-semibold text-lg text-deep-blue">
             Others
           </p>
-          <p className="text-grey-font-light mt-4 text-1.5base">Pricing</p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">
+          <p className="cursor-pointer text-grey-font-light mt-4 text-1.5base">
+            Pricing
+          </p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
             Cancellelation Policy
           </p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">Terms</p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">Privacy</p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
+            Terms
+          </p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
+            Privacy
+          </p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
             Disclaimers
           </p>
         </div>
@@ -68,18 +80,24 @@ function Footer() {
           <p className="cursor-pointer font-semibold text-lg text-deep-blue">
             Company
           </p>
-          <p className="text-grey-font-light mt-4 text-1.5base">About Us</p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">Support</p>
-          <p className="text-grey-font-light mt-1.5 text-1.5base">Contact Us</p>
+          <p className="cursor-pointer text-grey-font-light mt-4 text-1.5base">
+            About Us
+          </p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
+            Support
+          </p>
+          <p className="cursor-pointer text-grey-font-light mt-1.5 text-1.5base">
+            Contact Us
+          </p>
         </div>
         <div className="flex flex-col gap-y-5 ">
           <div className="flex gap-x-10">
-            <HeartIcon className="text-white h-6 w-6" />
-            <SparklesIcon className="text-white h-6 w-6" />
+            <HeartIcon className="cursor-pointer text-white h-6 w-6" />
+            <SparklesIcon className="cursor-pointer text-white h-6 w-6" />
           </div>
           <div className="flex gap-x-10">
-            <MoonIcon className="text-white h-6 w-6" />
-            <SunIcon className="text-white h-6 w-6" />
+            <MoonIcon className="cursor-pointer text-white h-6 w-6" />
+            <SunIcon className="cursor-pointer text-white h-6 w-6" />
           </div>
         </div>
       </div>

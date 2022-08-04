@@ -5,20 +5,20 @@ import Topscroller from "../components/Topscroller";
 import { BookmarkIcon } from "@heroicons/react/outline";
 import { BookmarkIcon as BookmarkIconselected } from "@heroicons/react/solid";
 
-import {
-  fiftyTwoWeekHigh,
-  fiftyTwoWeekLow,
-  dividendYield,
-  peRatio,
-  beta,
-  yearlyReturn,
-  weeklyReturn,
-  companyName,
-  symbol,
-  industry,
-  webURL,
-  logo,
-} from "./api/finnhub";
+// import {
+//   fiftyTwoWeekHigh,
+//   fiftyTwoWeekLow,
+//   dividendYield,
+//   peRatio,
+//   beta,
+//   yearlyReturn,
+//   weeklyReturn,
+//   companyName,
+//   symbol,
+//   industry,
+//   webURL,
+//   logo,
+// } from "./api/finnhub";
 import StockCard from "../components/StockCard";
 
 export default function Bookmark() {
@@ -40,7 +40,7 @@ export default function Bookmark() {
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Topscroller
+      {/* <Topscroller
         fiftyTwoWeekHigh={fiftyTwoWeekHigh}
         fiftyTwoWeekLow={fiftyTwoWeekLow}
         dividendYield={dividendYield}
@@ -53,7 +53,7 @@ export default function Bookmark() {
         industry={industry}
         webURL={webURL}
         logo={logo}
-      />
+      /> */}
       <Header setStockName={setStockName} />
       <div className="mt-10 mx-10">
         <StockCard setToast={setToast} />
