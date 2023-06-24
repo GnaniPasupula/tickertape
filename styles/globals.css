@@ -20,3 +20,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.header-content {
+  white-space: nowrap;
+  animation: scrolling-animation 20s linear infinite;
+}
+
+@keyframes scrolling-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling {
+  animation-play-state: running;
+}

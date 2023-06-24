@@ -60,6 +60,7 @@ export default function Signup() {
                     displayName: name,
                   });
                   //   console.log("Signed up" + user);
+                  router.push("/");
                 })
                 .catch((error) => {
                   const errorMessage = error.message;
@@ -67,7 +68,6 @@ export default function Signup() {
                   setToastr(true);
                 })
                 .finally(() => {
-                  router.push("/");
                   setEmail("");
                   setPassword("");
                 });
@@ -97,13 +97,13 @@ export default function Signup() {
         </p>
       </div>
       {toastg && (
-        <div className="animate-bounce shadow-lg absolute left-[40%] top-[5%] text-sm text-white w-1/6 h-10 flex items-center bg-green-500 rounded justify-center">
+        <div className="animate-bounce duration-1000 shadow-lg absolute left-[40%] top-[5%] text-sm text-white w-1/6 h-10 flex items-center bg-green-500 rounded justify-center">
           {toastMessage}
         </div>
       )}
       {toastr && (
-        <div className="animate-bounce shadow-lg absolute left-[40%] top-[5%] text-sm text-white w-1/6 h-10 flex items-center bg-red-500 rounded justify-center">
-          {toastMessage}
+        <div className="animate-bounce duration-1000 shadow-lg absolute left-[40%] top-[5%] text-sm text-white w-1/6 h-10 flex items-center bg-red-500 rounded justify-center">
+          "Invalid Email or already registered"
         </div>
       )}
     </div>

@@ -104,7 +104,22 @@ export default function Home() {
         logo={logo}
         currentPrice={currentPrice}
       />
-      <Header setStockName={setStockName} />
+      <Header
+        setStockName={setStockName}
+        fiftyTwoWeekHigh={fiftyTwoWeekHigh}
+        fiftyTwoWeekLow={fiftyTwoWeekLow}
+        dividendYield={dividendYield}
+        peRatio={peRatio}
+        beta={beta}
+        yearlyReturn={yearlyReturn}
+        weeklyReturn={weeklyReturn}
+        companyName={companyName}
+        symbol={symbol}
+        industry={industry}
+        webURL={webURL}
+        logo={logo}
+        currentPrice={currentPrice}
+      />
 
       <div className="px-28">
         <p className="text-white text-5xl font-semibold pt-60">

@@ -105,7 +105,7 @@ export default function Login() {
         </p>
       </div>
       {toast && (
-        <div className="animate-bounce shadow-lg absolute left-[40%] top-[5%] text-sm text-white w-1/6 h-10 flex items-center bg-red-500 rounded justify-center">
+        <div className="animate-bounce duration-1000 shadow-lg absolute left-[40%] top-[5%] text-sm text-white w-1/6 h-10 flex items-center bg-red-500 rounded justify-center">
           Login Failed
         </div>
       )}

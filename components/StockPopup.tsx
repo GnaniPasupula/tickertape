@@ -9,12 +9,14 @@ import {
 import { ArrowsExpandIcon, BookmarkIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../src/store/index";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
+import router, { Router } from "next/router";
 
 function StockPopup(props: any) {
   const stockBookmark = useSelector((state: any) => state.stockBookmark);
   const dispatch = useDispatch();
+  const displayName = useSelector((state: any) => state.displayName);
 
   var leftp = props.Position;
   const width = window.innerWidth;
@@ -43,6 +45,7 @@ function StockPopup(props: any) {
         URL: props.webURL,
         WeeklyReturn: props.weeklyReturn,
         Industry: props.industry,
+        user: displayName,
       });
       console.log("Document written with ID: ", docRef.id);
       console.log("Bookmarked");
@@ -52,6 +55,15 @@ function StockPopup(props: any) {
       dispatch(actions.setLoginToast(true));
     }
   };
+
+  // const removeStockBookmark = async () => {
+  //   try {
+  //     const docRef = await deleteDoc(
+  //       collection(db, "StockBookmark", props.symbol)
+
+  //     );
+
+  //   }
 
   return (
     <div
@@ -151,6 +163,7 @@ function StockPopup(props: any) {
             className="hover:shadow cursor-pointer h-9 w-9 p-2 rounded bg-white border border-grey-dark text-grey-font mr-2"
             onClick={() => {
               console.log("Removed from Bookmark");
+              // removeStockBookmark();
               dispatch(actions.setStockBookmark(false));
               // setToast(false);
             }}
@@ -159,7 +172,13 @@ function StockPopup(props: any) {
           <BookmarkIcon
             className="hover:shadow cursor-pointer h-9 w-9 p-2 rounded bg-white border border-grey-dark text-grey-font mr-2"
             onClick={() => {
-              addStockBookmark();
+              if (displayName === "") {
+                dispatch(actions.setLoginToast(true));
+                router.push("/login");
+              } else {
+                addStockBookmark();
+                console.log(displayName);
+              }
               // setToast(true);
             }}
           />

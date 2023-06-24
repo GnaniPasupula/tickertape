@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { actions } from "../src/store/index";
+import StockPopup from "./StockPopup";
 
 function Header(props: any) {
   const id = useId();
@@ -120,7 +121,12 @@ function Header(props: any) {
         <BookmarkIcon
           className="hover:bg-neutral-600 hidden md:inline-flex rounded h-8 w-8 p-1 text-white cursor-pointer"
           onClick={() => {
-            router.push("/bookmark");
+            if (displayName === "") {
+              dispatch(actions.setLoginToast(true));
+              // router.push("/login");
+            } else {
+              router.push("/bookmark");
+            }
           }}
         />
         {displayName ? (
@@ -152,17 +158,17 @@ function Header(props: any) {
       </div>
 
       {toast && (
-        <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
+        <div className="animate-bounce duration-1000 shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
           Signed Out Successfully
         </div>
       )}
       {toastBookmark && (
-        <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
+        <div className="animate-bounce duration-1000 shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
           Bookmarked
         </div>
       )}
       {toastLogin && (
-        <div className="animate-bounce shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
+        <div className="animate-bounce duration-1000 shadow-lg absolute left-[40%] top-[150%] text-sm text-white w-1/6 h-10 flex items-center bg-deep-blue rounded justify-center">
           Log in for Bookmark
         </div>
       )}
